@@ -2499,9 +2499,12 @@ static void FXFormPreprocessFieldDictionary(NSMutableDictionary *dictionary)
 {
     if ((self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]))
     {
-        self.textLabel.font = [UIFont systemFontOfSize:17];
+        self.textLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+        
         FXFormLabelSetMinFontSize(self.textLabel, FXFormFieldMinFontSize);
-        self.detailTextLabel.font = [UIFont systemFontOfSize:17];
+        
+        self.detailTextLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleCaption1];
+        
         FXFormLabelSetMinFontSize(self.detailTextLabel, FXFormFieldMinFontSize);
         
         if ([[UIDevice currentDevice].systemVersion floatValue] >= 7.0)
